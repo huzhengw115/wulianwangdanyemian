@@ -1,0 +1,37 @@
+<ion-view view-title="方案页">
+  <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
+    <p>{{tableShow}}</p>
+  </div>
+  <ion-content class="project-content">
+  	<div class="project-table">
+      <ul>
+        <li class="project-table-name">方案简介</li>
+        <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
+      </ul>
+      <ul>
+        <li class="project-table-name">应用范围</li>
+        <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
+        <li class="project-table-name">适用场景</li>
+        <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.changjing}}</li>
+      </ul>
+      <ul>
+        <li class="project-table-name">方案优势</li>
+        <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
+      </ul>
+      <ul>
+        <li class="project-table-name">预期效果</li>
+        <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
+      </ul>
+      <ul>
+        <li class="project-table-name">投入资金</li>
+        <li class="project-table-subcontent" ng-click="showTable(projectData.zijin)">{{projectData.zijin}}</li>
+        <li class="project-table-name">实施难易程度</li>
+        <li class="project-table-subcontent" ng-click="showTable(projectData.nandu)">{{projectData.nandu}}</li>
+      </ul>
+      <ul>
+        <li class="project-table-name">预期产生效益</li>
+        <li class="project-table-content" ng-click="showTable(projectData.xiaoyi)">{{projectData.xiaoyi}}</li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

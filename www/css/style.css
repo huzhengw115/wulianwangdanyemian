@@ -1,1 +1,45 @@
-/* Empty. Add your own CSS if you like */
+.news-content {
+	padding: 15px;
+}
+
+.news-head-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: #666;
+}
+
+.news-head-list {
+	overflow: auto;
+}
+
+.news-head-list > p {
+	float: left;
+	margin-right: 15px;
+	font-size: 14px;
+	color: #666;
+}
+
+.news-head-list > p:last-of-type {
+	float: right;
+	margin: 0;
+}
+
+.news-head-page {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.news-head-page img {
+	width: 100%;
+	height: auto;
+}
+
+.news-head-author {
+	overflow: auto;
+}
+
+.news-head-author > p {
+	float: right;
+	font-size: 14px;
+	color: #666;
+}

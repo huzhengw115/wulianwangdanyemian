@@ -1,0 +1,16 @@
+<ion-view view-title="资讯页">
+  <ion-content class="news-content">
+  	<div class="news-head">
+  		<h2 class="news-head-title">{{newsData.title}}</h2>
+  		<div class="news-head-list">
+  			<p>{{newsData.adress}}</p>
+  			<p>{{newsData.time}}</p>
+  			<p>{{newsData.number}}</p>
+  		</div>
+  	</div>
+  	<div class="news-head-page" ng-bind-html="newsData.newsdata"></div>
+  	<div class="news-head-author">
+  		<p>{{newsData.author}}</p>
+  	</div>
+  </ion-content>
+</ion-view>
