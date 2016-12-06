@@ -1,4 +1,4 @@
-<ion-view view-title="方案页">
+<ion-view view-title="方案页" hide-tabs="">
   <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
     <p>{{tableShow}}</p>
   </div>
@@ -44,9 +44,15 @@
       </div>
       <div class="change-button" ng-click="toBeLong()">
         <p class="change-button-decoration-left"></p>
-        <p class="change-button-content-left">展</p>
+        <p class="change-button-content-left">
+          <label ng-if="openButton">展</label>
+          <label ng-if="closeButton">关</label>
+        </p>
         <p class="change-button-decoration-right"></p>
-        <p class="change-button-content-right">开</p>
+        <p class="change-button-content-right">
+          <label ng-if="openButton">开</label>
+          <label ng-if="closeButton">闭</label>
+        </p>
         </div>
     </div>
     <main class="project-head-page" ng-bind-html="projectData.newsdata"></main>

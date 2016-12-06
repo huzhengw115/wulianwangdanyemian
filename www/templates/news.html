@@ -1,4 +1,4 @@
-<ion-view view-title="资讯页">
+<ion-view view-title="资讯页" hide-tabs="">
   <ion-content class="news-content">
   	<div class="news-head">
   		<h2 class="news-head-title">{{newsData.title}}</h2>
@@ -7,7 +7,7 @@
   			<p>{{newsData.time}}</p>
   			<p>{{newsData.number}}</p>
   		</div>
-      <img src="{{newsData.pic}}" class="news-head-pic">
+      <img src="{{newsData.pic}}" class="news-head-pic" ng-if="isPicShow">
   	</div>
   	<main class="news-head-page" ng-bind-html="newsData.newsdata"></main>
   	<div class="news-head-author">
