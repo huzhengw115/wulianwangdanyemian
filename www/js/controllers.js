@@ -16,14 +16,14 @@ angular.module('starter.controllers', [])
 	getNewsData()
 })
 
-.controller('ProjectCtrl', function ($scope, newsService) {
+.controller('ProjectCtrl', function ($scope, newsService, swipeService) {
 	$scope.projectData = []
 	$scope.openButton = true
 	var getProjectData = function () {
 		newsService.getProjectData().then(function (projectData) {
 			$scope.projectData = projectData
 			console.log('$scope.projectData:',$scope.projectData)
-			// swipeService.photoswipe()
+			swipeService.photoswipe()
 		})
 	}
 	$scope.showTable = function (data) {
