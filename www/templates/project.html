@@ -1,4 +1,4 @@
-<ion-view view-title="方案页" hide-tabs="">
+<ion-view view-title="方案页" hide-tabs="true">
   <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
     <p>{{tableShow}}</p>
   </div>
@@ -14,32 +14,33 @@
     <div class="project-table">
       <div id="project-table" class="{{ projectTable === true ? 'open' : 'close' }}">
         <ul>
-          <li class="project-table-name">投入资金</li>
-          <li class="project-table-subcontent">{{projectData.zijin}}</li>
-          <li class="project-table-name">适用场景</li>
-          <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.changjing}}</li>
-        </ul>
-        <ul>
-          <li class="project-table-name">预期产生效益</li>
-          <li class="project-table-content">{{projectData.xiaoyi}}</li>
-        </ul>
-        <ul>
-          <li class="project-table-name">方案优势</li>
-          <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
-        </ul>
-        <ul>
-          <li class="project-table-name">方案简介</li>
+          <li class="project-table-subname"><p>方案简介</p></li>
           <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
         </ul>
         <ul>
-          <li class="project-table-name">预期效果</li>
+          <li class="project-table-subname"><p>投入资金</p></li>
+          <li class="project-table-subcontent">{{projectData.zijin}}</li>
+          <li class="project-table-name"><p>预期产生效益</p></li>
+          <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.xiaoyi}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-subname"><p>方案优势</p></li>
+          <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
+        </ul>
+        
+        <ul>
+          <li class="project-table-subname"><p>预期效果</p></li>
           <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
         </ul>
         <ul>
-          <li class="project-table-name">应用范围</li>
+          <li class="project-table-subname"><p>应用范围</p></li>
           <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
-          <li class="project-table-name">实施难易程度</li>
+          <li class="project-table-name"><p>实施难易程度</p></li>
           <li class="project-table-subcontent">{{projectData.nandu}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-subname"><p>适用场景</p></li>
+          <li class="project-table-content">{{projectData.changjing}}</li>
         </ul>
       </div>
       <div class="change-button" ng-click="toBeLong()">
