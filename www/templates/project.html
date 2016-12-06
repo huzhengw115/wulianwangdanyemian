@@ -3,70 +3,55 @@
     <p>{{tableShow}}</p>
   </div>
   <ion-content class="project-content">
-  	<div class="project-table">
-      <ul>
-        <li class="project-table-name">方案简介</li>
-        <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">应用范围</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
-        <li class="project-table-name">适用场景</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.changjing}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">方案优势</li>
-        <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">预期效果</li>
-        <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">投入资金</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.zijin)">{{projectData.zijin}}</li>
-        <li class="project-table-name">实施难易程度</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.nandu)">{{projectData.nandu}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">预期产生效益</li>
-        <li class="project-table-content" ng-click="showTable(projectData.xiaoyi)">{{projectData.xiaoyi}}</li>
-      </ul>
+    <div class="project-head">
+      <h2 class="project-head-title">{{projectData.title}}</h2>
+      <div class="project-head-list">
+        <p>{{projectData.adress}}</p>
+        <p>{{projectData.time}}</p>
+        <p>{{projectData.number}}</p>
+      </div>
     </div>
-
-
-    <div id="project-table" class="project-table-two {{ projectTable === true ? 'open' : 'close' }}">
-      
-      <ul>
-        <li class="project-table-name">投入资金</li>
-        <li class="project-table-subcontent">{{projectData.zijin}}</li>
-        <li class="project-table-name">适用场景</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.changjing}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">预期产生效益</li>
-        <li class="project-table-content">{{projectData.xiaoyi}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">方案优势</li>
-        <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">方案简介</li>
-        <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">预期效果</li>
-        <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
-      </ul>
-      <ul>
-        <li class="project-table-name">应用范围</li>
-        <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
-        <li class="project-table-name">实施难易程度</li>
-        <li class="project-table-subcontent">{{projectData.nandu}}</li>
-      </ul>
+    <div class="project-table">
+      <div id="project-table" class="{{ projectTable === true ? 'open' : 'close' }}">
+        <ul>
+          <li class="project-table-name">投入资金</li>
+          <li class="project-table-subcontent">{{projectData.zijin}}</li>
+          <li class="project-table-name">适用场景</li>
+          <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.changjing}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-name">预期产生效益</li>
+          <li class="project-table-content">{{projectData.xiaoyi}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-name">方案优势</li>
+          <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-name">方案简介</li>
+          <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-name">预期效果</li>
+          <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
+        </ul>
+        <ul>
+          <li class="project-table-name">应用范围</li>
+          <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
+          <li class="project-table-name">实施难易程度</li>
+          <li class="project-table-subcontent">{{projectData.nandu}}</li>
+        </ul>
+      </div>
+      <div class="change-button" ng-click="toBeLong()">
+        <p class="change-button-decoration-left"></p>
+        <p class="change-button-content-left">展</p>
+        <p class="change-button-decoration-right"></p>
+        <p class="change-button-content-right">开</p>
+        </div>
     </div>
-    <button class="to-be-long-button" ng-click="toBeLong()">拉伸</button>
-    <p style="margin-top: 100px;">无线射频识别RFID是20世纪90年代开始兴起的一种非接触式的自动识别技术，她是一项利用射频信号通过空间耦合实现无接触信息传递，并通过所传递的信息达到识别的技术。无线射频识别RFID是20世纪90年代开始兴起的一种非接触式的自动识别技术，她是一项利用射频信号通过空间耦合实现无接触信息传递，并通过所传递的信息达到识别的技术。无线射频识别RFID是20世纪90年代开始兴起的一种非接触式的自动识别技术，她是一项利用射频信号通过空间耦合实现无接触信息传递，并通过所传递的信息达到识别的技术。</p>
+    <main class="project-head-page" ng-bind-html="projectData.newsdata"></main>
+    <div class="project-head-author">
+      <p>编辑：{{projectData.author}}</p>
+    </div>
   </ion-content>
 </ion-view>

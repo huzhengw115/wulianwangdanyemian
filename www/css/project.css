@@ -1,21 +1,66 @@
 .project-content {
-	padding: 15px;
+	background-color: #eee;
+}
+
+.project-head {
+	background-color: #fff;
+	padding: 15px 15px 10px 15px;
+}
+
+.project-head-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: #666;
+	padding-bottom: 10px;
+}
+
+.project-head-list {
+	overflow: auto;
+}
+
+.project-head-list > p {
+	float: left;
+	margin-right: 15px;
+	font-size: 14px;
+	color: #666;
+}
+
+.project-head-list > p:last-of-type {
+	float: right;
+	margin: 0;
 }
 
 .project-table {
+	background-color: #fff;
+	padding: 25px 15px 15px 15px;
+	margin: 7px 0;
+}
+
+#project-table {
+	height: 120px;
+	transition: .6s;
+	overflow: auto;
+	border-bottom: 1px solid #eee;
 	width: 100%;
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
 	font-size: 14px;
-	margin-bottom: 100px;
 }
 
-.project-table ul {
+#project-table.open {
+	height: 307px;
+}
+
+.project-table {
+	
+}
+
+#project-table ul {
 	overflow: auto;
 	border-bottom: 1px solid #eee;
 }
 
-.project-table li {
+#project-table li {
 	float: left;
 	padding: 5px;
 }
@@ -46,40 +91,67 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	padding: 15px;
+	padding: 10px;
 }
 
 .project-table-show > p {
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	margin-top: 150px;
+	margin-top: 100px;
+	border: 2px solid #ddd;
 }
 
-.project-table-two {
+.change-button {
 	overflow: auto;
-	border-bottom: 1px solid #eee;
+	padding-top: 8px;
 }
 
-.project-table-two ul {
-	overflow: auto;
-	border-bottom: 1px solid #eee;
-}
-
-.project-table-two li {
+.change-button-decoration-left {
 	float: left;
-	padding: 5px;
+	width: 40%;
+	padding-bottom: 8px;
+	border-bottom: 3px solid #eee;
 }
 
-#project-table {
-	height: 120px;
-	transition: .6s;
+.change-button-decoration-right {
+	float: right;
+	width: 40%;
+	padding-bottom: 8px;
+	border-bottom: 3px solid #eee;
 }
 
-#project-table.open {
-	height: 307px;
+.change-button-content-left {
+	float: left;
+	padding-left: 10px;
 }
 
-.to-be-long-button {
-	border: 0;
+.change-button-content-right {
+	float: right;
+	padding-right: 10px;
+}
+
+.project-head-page {
+	background-color: #fff;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 15px;
+}
+
+.project-head-page img {
+	width: 100%;
+	height: auto;
+}
+
+.project-head-author {
+	background-color: #fff;
+	overflow: auto;
+	padding: 15px;
+	padding-top: 0;
+}
+
+.project-head-author > p {
+	float: right;
+	font-size: 14px;
+	color: #666;
 }

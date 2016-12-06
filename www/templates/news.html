@@ -7,10 +7,11 @@
   			<p>{{newsData.time}}</p>
   			<p>{{newsData.number}}</p>
   		</div>
+      <img src="{{newsData.pic}}" class="news-head-pic">
   	</div>
-  	<div class="news-head-page" ng-bind-html="newsData.newsdata"></div>
+  	<main class="news-head-page" ng-bind-html="newsData.newsdata"></main>
   	<div class="news-head-author">
-  		<p>{{newsData.author}}</p>
+  		<p>编辑：{{newsData.author}}</p>
   	</div>
   </ion-content>
 </ion-view>
