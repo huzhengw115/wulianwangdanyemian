@@ -27,5 +27,8 @@ angular.module('starter.controllers', [])
 	$scope.hideTable = function () {
 		$scope.isShow = false
 	}
+	$scope.toBeLong = function () {
+		$scope.projectTable = !$scope.projectTable
+	}
 	getProjectData()
 })

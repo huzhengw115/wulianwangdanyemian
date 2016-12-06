@@ -7,6 +7,7 @@
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
 	font-size: 14px;
+	margin-bottom: 100px;
 }
 
 .project-table ul {
@@ -52,5 +53,33 @@
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 150px;
+}
+
+.project-table-two {
+	overflow: auto;
+	border-bottom: 1px solid #eee;
+}
+
+.project-table-two ul {
+	overflow: auto;
+	border-bottom: 1px solid #eee;
+}
+
+.project-table-two li {
+	float: left;
+	padding: 5px;
+}
+
+#project-table {
+	height: 120px;
+	transition: .6s;
+}
+
+#project-table.open {
+	height: 307px;
+}
+
+.to-be-long-button {
+	border: 0;
 }
