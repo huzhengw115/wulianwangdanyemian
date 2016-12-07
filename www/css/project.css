@@ -14,6 +14,11 @@
 	padding-bottom: 10px;
 }
 
+.project-head-copyfrom {
+	margin-bottom: 5px;
+	color: #666;
+}
+
 .project-head-list {
 	overflow: auto;
 }
@@ -45,14 +50,11 @@
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
 	font-size: 14px;
+	overflow: hidden
 }
 
 #project-table.open {
 	height: 307px;
-}
-
-.project-table {
-	
 }
 
 #project-table ul {
@@ -63,6 +65,7 @@
 #project-table li {
 	float: left;
 	padding: 5px;
+	overflow: hidden
 }
 
 @media screen and (min-width: 320px){
@@ -134,6 +137,10 @@
 	height: 50px;
 }
 
+.project-table-content > p {
+	height: 50px;
+}
+
 .project-table-subcontent {
 	width: 30%;
 	border-right: 1px solid #eee;
@@ -186,27 +193,44 @@
 	padding-right: 10px;
 }
 
-.project-head-page {
+.project-page {
 	background-color: #fff;
 	font-size: 16px;
 	line-height: 1.5;
 	padding: 15px;
 }
 
-.project-head-page img {
+.project-page img {
 	width: 100%;
 	height: auto;
 }
 
-.project-head-author {
+.project-bottom {
 	background-color: #fff;
 	overflow: auto;
 	padding: 15px;
 	padding-top: 0;
 }
 
-.project-head-author > p {
+.project-tag {
+	overflow: auto;
+	float: left;
+}
+
+.project-tag > p{
+	float: left;
+	border: 1px solid #ddd;
+	background-color: #eee;
+	padding: 3px 10px;
+	border-radius: 10px;
+	margin-right: 5px;
+	font-size: 12px;
+	color: #666;
+}
+
+.project-author {
 	float: right;
 	font-size: 14px;
 	color: #666;
+	padding-top: 2px;
 }

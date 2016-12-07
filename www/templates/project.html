@@ -5,10 +5,11 @@
   <ion-content class="project-content">
     <div class="project-head">
       <h2 class="project-head-title">{{projectData.title}}</h2>
+      <p class="project-head-copyfrom">{{projectData.adress}}</p>
       <div class="project-head-list">
         <p>{{projectData.adress}}</p>
         <p>{{projectData.time}}</p>
-        <p>{{projectData.number}}</p>
+        <p>出处：{{projectData.number}}</p>
       </div>
     </div>
     <div class="project-table">
@@ -21,7 +22,7 @@
           <li class="project-table-subname"><p>投入资金</p></li>
           <li class="project-table-subcontent">{{projectData.zijin}}</li>
           <li class="project-table-name"><p>预期产生效益</p></li>
-          <li class="project-table-subcontent" ng-click="showTable(projectData.changjing)">{{projectData.xiaoyi}}</li>
+          <li class="project-table-subcontent">{{projectData.xiaoyi}}</li>
         </ul>
         <ul>
           <li class="project-table-subname"><p>方案优势</p></li>
@@ -56,9 +57,12 @@
         </p>
         </div>
     </div>
-    <main class="project-head-page" ng-bind-html="projectData.newsdata"></main>
-    <div class="project-head-author">
-      <p>编辑：{{projectData.author}}</p>
+    <main class="project-page" ng-bind-html="projectData.newsdata"></main>
+    <div class="project-bottom">
+      <div class="project-tag">
+        <p ng-repeat="data in projectData.tags">{{data}}</p>
+      </div>
+      <p class="project-author">编辑：{{projectData.author}}</p>
     </div>
   </ion-content>
 </ion-view>
