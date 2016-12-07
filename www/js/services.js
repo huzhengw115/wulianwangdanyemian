@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.service('newsService', function ($http, $q) {
+.service('newsService', ['$http', '$q', function ($http, $q) {
 	var getNewsData = function () {
 		var newsData = []
 		var deferred = $q.defer()
@@ -33,9 +33,9 @@ angular.module('starter.services', [])
 		getNewsData: getNewsData,
 		getProjectData: getProjectData
 	}
-})
+}])
 
-.factory('LoaderService', function ($rootScope, $ionicLoading) {
+.factory('LoaderService', ['$rootScope', '$ionicLoading', function ($rootScope, $ionicLoading) {
   return {
     show: function () {
       $rootScope.loading = $ionicLoading.show({
@@ -50,4 +50,4 @@ angular.module('starter.services', [])
       $ionicLoading.hide()
     }
   }
-})
+}])

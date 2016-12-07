@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function ($ionicPlatform) {
+.run(['$ionicPlatform', function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,9 +21,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault()
     }
   })
-})
+}])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -62,9 +62,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/news')
-})
+}])
 
-.directive('hideTabs', function ($rootScope) {
+.directive('hideTabs', ['$rootScope', function ($rootScope) {
   return {
     restrict: 'A',
     link: function (scope, element, attributes) {
@@ -78,9 +78,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       })
     }
   }
-})
+}])
 
-.service('swipeService', function ($document) {
+.service('swipeService', ['$document', function ($document) {
   var photoswipe = function () {
     var items = []
     var pswpElement = document.querySelectorAll('.pswp')[0]
@@ -131,4 +131,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   return{
     photoswipe: photoswipe
   }
-})
+}])

@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('NewsCtrl', function ($scope, newsService, swipeService, LoaderService) {
+.controller('NewsCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', function ($scope, newsService, swipeService, LoaderService) {
 	var getNewsData = function () {
 		LoaderService.show()
 		newsService.getNewsData().then(function (newsData) {
@@ -16,9 +16,9 @@ angular.module('starter.controllers', [])
 		LoaderService.hide()
 	}
 	getNewsData()
-})
+}])
 
-.controller('ProjectCtrl', function ($scope, newsService, swipeService, LoaderService) {
+.controller('ProjectCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', function ($scope, newsService, swipeService, LoaderService) {
 	$scope.projectData = []
 	$scope.openButton = true
 	var getProjectData = function () {
@@ -44,4 +44,4 @@ angular.module('starter.controllers', [])
 		$scope.closeButton = !$scope.closeButton
 	}
 	getProjectData()
-})
+}])
