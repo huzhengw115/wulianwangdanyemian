@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('NewsCtrl', function ($scope, newsService, swipeService) {
+.controller('NewsCtrl', function ($scope, newsService, swipeService, LoaderService) {
 	var getNewsData = function () {
+		LoaderService.show()
 		newsService.getNewsData().then(function (newsData) {
 			$scope.newsData = newsData
 			console.log('$scope.newsData:',$scope.newsData)
@@ -12,19 +13,22 @@ angular.module('starter.controllers', [])
 				$scope.isPicShow = true
 			}
 		})
+		LoaderService.hide()
 	}
 	getNewsData()
 })
 
-.controller('ProjectCtrl', function ($scope, newsService, swipeService) {
+.controller('ProjectCtrl', function ($scope, newsService, swipeService, LoaderService) {
 	$scope.projectData = []
 	$scope.openButton = true
 	var getProjectData = function () {
+		LoaderService.show()
 		newsService.getProjectData().then(function (projectData) {
 			$scope.projectData = projectData
 			console.log('$scope.projectData:',$scope.projectData)
 			swipeService.photoswipe()
 		})
+		LoaderService.hide()
 	}
 	$scope.showTable = function (data) {
 		$scope.isShow = true

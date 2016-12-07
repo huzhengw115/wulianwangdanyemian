@@ -34,3 +34,20 @@ angular.module('starter.services', [])
 		getProjectData: getProjectData
 	}
 })
+
+.factory('LoaderService', function ($rootScope, $ionicLoading) {
+  return {
+    show: function () {
+      $rootScope.loading = $ionicLoading.show({
+        template: '<i>加载中...</i>',
+        animation: 'fade-in',
+        showBackdrop: true,
+        minWidth: 200,
+         showDelay: 10
+      })
+    },
+    hide: function () {
+      $ionicLoading.hide()
+    }
+  }
+})

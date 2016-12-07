@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var uglify = require('gulp-uglify');
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -48,4 +49,19 @@ gulp.task('git-check', function(done) {
     process.exit(1);
   }
   done();
+});
+
+//合并所有的js文件
+gulp.task('testConcat',function(){
+  gulp.src('www/js/*.js')
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('www/js'));
+});
+
+//压缩js文件
+gulp.task('jsmin',function(){
+  gulp.src('www/js/*.js')
+    .pipe(uglify())
+    .pipe(rename('*.min.js'))
+    .pipe(gulp.dest('www/js'));
 });
