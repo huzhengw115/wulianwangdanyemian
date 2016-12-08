@@ -1,6 +1,6 @@
 <ion-view view-title="方案页" hide-tabs="true">
   <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
-    <p>{{tableShow}}</p>
+    <p id="project-table-show" class="{{ isTableShow === true ? 'open' : 'close' }}">{{tableShow}}</p>
   </div>
   <ion-content class="project-content">
     <div class="project-head">

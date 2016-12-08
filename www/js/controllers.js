@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
 	getNewsData()
 }])
 
-.controller('ProjectCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', function ($scope, newsService, swipeService, LoaderService) {
+.controller('ProjectCtrl', ['$timeout', '$scope', 'newsService', 'swipeService', 'LoaderService', function ($timeout, $scope, newsService, swipeService, LoaderService) {
 	$scope.projectData = []
 	$scope.openButton = true
 	var getProjectData = function () {
@@ -34,9 +34,13 @@ angular.module('starter.controllers', [])
 		$scope.isShow = true
 		$scope.tableShow = data
 		console.log($scope.tableShow)
+		$timeout(function() {
+			$scope.isTableShow = !$scope.isTableShow
+		}, 50)
 	}
 	$scope.hideTable = function () {
 		$scope.isShow = false
+		$scope.isTableShow = !$scope.isTableShow
 	}
 	$scope.toBeLong = function () {
 		$scope.projectTable = !$scope.projectTable

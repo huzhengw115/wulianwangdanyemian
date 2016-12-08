@@ -44,7 +44,6 @@
 #project-table {
 	height: 120px;
 	transition: .6s;
-	overflow: auto;
 	border-bottom: 1px solid #eee;
 	width: 100%;
 	border-top: 1px solid #eee;
@@ -156,12 +155,19 @@
 	padding: 10px;
 }
 
-.project-table-show > p {
+#project-table-show {
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	margin-top: 100px;
+	margin: auto;
 	border: 2px solid #ddd;
+	margin-top: 100px;
+	opacity: 0;
+	transition: .5s;
+}
+
+#project-table-show.open {
+	opacity: 1;
 }
 
 .change-button {
