@@ -1,9 +1,11 @@
 angular.module('starter.controllers', [])
 
-.controller('NewsCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', function ($scope, newsService, swipeService, LoaderService) {
+.controller('NewsCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', '$stateParams', function ($scope, newsService, swipeService, LoaderService, $stateParams) {
 	var getNewsData = function () {
+		var newsId = $stateParams.newsId
+		console.log('newsId:', newsId)
 		LoaderService.show()
-		newsService.getNewsData().then(function (newsData) {
+		newsService.getNewsData(newsId).then(function (newsData) {
 			$scope.newsData = newsData
 			console.log('$scope.newsData:',$scope.newsData)
 			swipeService.photoswipe()
@@ -18,12 +20,14 @@ angular.module('starter.controllers', [])
 	getNewsData()
 }])
 
-.controller('ProjectCtrl', ['$timeout', '$scope', 'newsService', 'swipeService', 'LoaderService', function ($timeout, $scope, newsService, swipeService, LoaderService) {
+.controller('ProjectCtrl', ['$timeout', '$scope', 'newsService', 'swipeService', 'LoaderService', '$stateParams', function ($timeout, $scope, newsService, swipeService, LoaderService, $stateParams) {
 	$scope.projectData = []
 	$scope.openButton = true
 	var getProjectData = function () {
+		var projectId = $stateParams.projectId
+		console.log('projectId:', projectId)
 		LoaderService.show()
-		newsService.getProjectData().then(function (projectData) {
+		newsService.getProjectData(projectId).then(function (projectData) {
 			$scope.projectData = projectData
 			console.log('$scope.projectData:',$scope.projectData)
 			swipeService.photoswipe()

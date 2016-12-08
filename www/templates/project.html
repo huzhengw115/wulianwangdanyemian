@@ -5,10 +5,10 @@
   <ion-content class="project-content">
     <div class="project-head">
       <h2 class="project-head-title">{{projectData.title}}</h2>
-      <p class="project-head-copyfrom">{{projectData.adress}}</p>
+      <p class="project-head-copyfrom">{{projectData.copyfrom}}</p>
       <div class="project-head-list">
-        <p>{{projectData.time}}</p>
-        <p>阅读：{{projectData.number}}</p>
+        <p>{{projectData.inputtime}}</p>
+        <p>阅读：{{projectData.clicks}}</p>
       </div>
     </div>
     <div class="project-table">
@@ -56,10 +56,10 @@
         </p>
         </div>
     </div>
-    <main class="project-page" ng-bind-html="projectData.newsdata"></main>
+    <main class="project-page" ng-bind-html="projectData.content"></main>
     <div class="project-bottom">
       <div class="project-tag">
-        <p ng-repeat="data in projectData.tags">{{data}}</p>
+        <p ng-repeat="data in projectData.tags.name">{{data}}</p>
       </div>
       <p class="project-author">编辑：{{projectData.author}}</p>
     </div>
