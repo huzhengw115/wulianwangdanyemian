@@ -7,12 +7,12 @@
   			<p>{{newsData.inputtime}}</p>
   			<p>阅读：{{newsData.clicks}}</p>
   		</div>
-      <img src="{{newsData.thumb.path}}" class="news-head-pic" ng-if="isPicShow">
+      <img src="{{data.path}}" ng-repeat="data in newsData.thumb" class="news-head-pic" ng-if="isPicShow">
   	</div>
   	<main class="news-page" ng-bind-html="newsData.content"></main>
   	<div class="news-bottom">
       <div class="news-tag">
-        <p ng-repeat="data in newsData.name">{{data}}</p>
+        <p>{{newsData.tagsname}}</p>
       </div>
   		<p class="news-author">编辑：{{newsData.author}}</p>
   	</div>

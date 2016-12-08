@@ -15,32 +15,32 @@
       <div id="project-table" class="{{ projectTable === true ? 'open' : 'close' }}">
         <ul>
           <li class="project-table-subname"><p>方案简介</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.jianjie)">{{projectData.jianjie}}</li>
+          <li class="project-table-content" ng-click="showTable(projectData.attachment)">{{projectData.attachment}}</li>
         </ul>
         <ul>
           <li class="project-table-subname"><p>投入资金</p></li>
-          <li class="project-table-subcontent">{{projectData.zijin}}</li>
+          <li class="project-table-subcontent">{{projectData.investment}}</li>
           <li class="project-table-name"><p>预期产生效益</p></li>
-          <li class="project-table-subcontent">{{projectData.xiaoyi}}</li>
+          <li class="project-table-subcontent">{{projectData.benefit}}</li>
         </ul>
         <ul>
           <li class="project-table-subname"><p>方案优势</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.youshi)">{{projectData.youshi}}</li>
+          <li class="project-table-content" ng-click="showTable(projectData.advantage)">{{projectData.advantage}}</li>
         </ul>
         
         <ul>
           <li class="project-table-subname"><p>预期效果</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.xiaoguo)">{{projectData.xiaoguo}}</li>
+          <li class="project-table-content" ng-click="showTable(projectData.effect)">{{projectData.effect}}</li>
         </ul>
         <ul>
           <li class="project-table-subname"><p>应用范围</p></li>
-          <li class="project-table-subcontent" ng-click="showTable(projectData.fanwei)">{{projectData.fanwei}}</li>
+          <li class="project-table-subcontent" ng-click="showTable(projectData.range)">{{projectData.range}}</li>
           <li class="project-table-name"><p>实施难易程度</p></li>
-          <li class="project-table-subcontent">{{projectData.nandu}}</li>
+          <li class="project-table-subcontent">{{projectData.difficulty}}</li>
         </ul>
         <ul>
           <li class="project-table-subname"><p>适用场景</p></li>
-          <li class="project-table-content">{{projectData.changjing}}</li>
+          <li class="project-table-content">{{projectData.place}}</li>
         </ul>
       </div>
       <div class="change-button" ng-click="toBeLong()">
@@ -59,7 +59,7 @@
     <main class="project-page" ng-bind-html="projectData.content"></main>
     <div class="project-bottom">
       <div class="project-tag">
-        <p ng-repeat="data in projectData.tags.name">{{data}}</p>
+        <p>{{projectData.tagsname}}</p>
       </div>
       <p class="project-author">编辑：{{projectData.author}}</p>
     </div>

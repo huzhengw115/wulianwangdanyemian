@@ -64,6 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/news')
 }])
 
+//控制页面下方tab的显示和隐藏
 .directive('hideTabs', ['$rootScope', function ($rootScope) {
   return {
     restrict: 'A',
@@ -80,6 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   }
 }])
 
+//图片的幻灯片插件
 .service('swipeService', ['$document', function ($document) {
   var photoswipe = function () {
     var items = []

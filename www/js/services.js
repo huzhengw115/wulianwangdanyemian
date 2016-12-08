@@ -1,14 +1,17 @@
 angular.module('starter.services', [])
 
+//所有数据的读取
 .service('newsService', ['$http', '$q', function ($http, $q) {
+	//资讯页面的数据读取，newsID值由上层的controller传递而来
 	var getNewsData = function (newsId) {
 		var newsData = []
+		//由url中的ID值来控制读取的数据是什么
 		var url = 'http://gov.im2m.com.cn/api/news/detail/id/'
 		url += newsId
 		url += '?callback=JSON_CALLBACK'
 		var deferred = $q.defer()
-		//$http.get('json/news.json')
-		$http.jsonp(url)
+		$http.get('json/news1.json')
+		//$http.jsonp(url)
 		.success(function (data) {
 			console.log('data:', data)
 			newsData = data
@@ -20,14 +23,15 @@ angular.module('starter.services', [])
 		})
 		return deferred.promise
 	}
+	//方案页面的数据读取
 	var getProjectData = function (projectId) {
 		var projectData = []
 		var deferred = $q.defer()
 		var url = 'http://gov.im2m.com.cn/api/Solutions/detail/id/'
 		url += projectId
 		url += '?callback=JSON_CALLBACK'
-		//$http.get('json/project.json')
-		$http.jsonp(url)
+		$http.get('json/project1.json')
+		//$http.jsonp(url)
 		.success(function (data) {
 			console.log('data:', data)
 			projectData = data
@@ -45,8 +49,10 @@ angular.module('starter.services', [])
 	}
 }])
 
+//加载动画的方法
 .factory('LoaderService', ['$rootScope', '$ionicLoading', function ($rootScope, $ionicLoading) {
   return {
+  	//页面加载时的动画效果
     show: function () {
       $rootScope.loading = $ionicLoading.show({
         template: '<i>加载中...</i>',
@@ -56,6 +62,7 @@ angular.module('starter.services', [])
          showDelay: 10
       })
     },
+    //页面加载完成之后关闭动画效果
     hide: function () {
       $ionicLoading.hide()
     }
