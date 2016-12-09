@@ -10,7 +10,7 @@ angular.module('starter.services', [])
 		url += newsId
 		url += '?callback=JSON_CALLBACK'
 		var deferred = $q.defer()
-		$http.get('json/news1.json')
+		$http.get('json/news.json')
 		//$http.jsonp(url)
 		.success(function (data) {
 			console.log('data:', data)
@@ -30,7 +30,7 @@ angular.module('starter.services', [])
 		var url = 'http://gov.im2m.com.cn/api/Solutions/detail/id/'
 		url += projectId
 		url += '?callback=JSON_CALLBACK'
-		$http.get('json/project1.json')
+		$http.get('json/project.json')
 		//$http.jsonp(url)
 		.success(function (data) {
 			console.log('data:', data)

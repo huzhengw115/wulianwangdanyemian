@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
 		//放大的表格是ng-if控制，所以控制html先出现画面再加载动画
 		$timeout(function() {
 			$scope.isTableShow = !$scope.isTableShow
-		}, 50)
+		}, 0)
 	}
 	//点击放大后表格来关闭它
 	$scope.hideTable = function () {
@@ -68,4 +68,32 @@ angular.module('starter.controllers', [])
 		$scope.closeButton = !$scope.closeButton
 	}
 	getProjectData()
+}])
+
+//专题
+.controller('SpecialCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', '$stateParams', function ($scope, newsService, swipeService, LoaderService, $stateParams) {
+	//读取数据
+	var getSpecialData = function () {
+		//获取ID值
+		var specialId = $stateParams.specialId
+		
+		//载入加载动画
+		LoaderService.show()
+
+		//从service中调用数据方法
+		newsService.getNewsData(specialId).then(function (newsData) {
+			$scope.specialData = newsData
+			console.log('$scope.specialData:',$scope.specialData)
+		})
+		//关闭加载动画
+		LoaderService.hide()
+	}
+	getSpecialData()
+}])
+
+.controller('FooterCtrl', ['$scope', function ($scope) {
+	$scope.footerCLass = 'footerExplain'
+	$scope.selectCLass = function () {
+		$scope.footerCLass= 'footerExplainDisplay'
+	}
 }])

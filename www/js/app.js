@@ -60,8 +60,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.special', {
+    url: '/special/:specialId',
+    views: {
+      'Special': {
+        templateUrl: 'templates/special.html',
+        controller: 'SpecialCtrl'
+      }
+    }
+  })
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/news')
+  $urlRouterProvider.otherwise('/tab/news/0')
 }])
 
 //控制页面下方tab的显示和隐藏
