@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('NewsCtrl', ['$scope', 'newsService', 'swipeService', 'LoaderService', '$stateParams', function ($scope, newsService, swipeService, LoaderService, $stateParams) {
+	
+	$scope.picture = 'img/title.jpg'
+
 	//读取数据
 	var getNewsData = function () {
 		//获取ID值
@@ -10,19 +13,23 @@ angular.module('starter.controllers', [])
 		//从service中调用数据方法
 		newsService.getNewsData(newsId).then(function (newsData) {
 			$scope.newsData = newsData
-			console.log('$scope.newsData:',$scope.newsData)
+			console.log('$scope.newsData:', $scope.newsData)
 			//图片的插件
 			swipeService.photoswipe()
 			//防止数据中不存在图片的数据时页面上出现小图标
-			if($scope.newsData.pic == '') {
-				$scope.isPicShow = false
-			}else {
+			if('pic' in newsData && newsData.pic != '') {
 				$scope.isPicShow = true
+				$scope.picture = newsData.pic
+			} else {
+				$scope.isPicShow = false
 			}
+			//分享
+			WeixinShare.wxShare($scope.newsData.title, $scope.picture, '#/tab/special/' + newsId, 'desc')
 		})
 		//关闭加载动画
 		LoaderService.hide()
 	}
+
 	getNewsData()
 }])
 
