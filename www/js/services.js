@@ -2,7 +2,9 @@ angular.module('starter.services', [])
 
 //所有数据的读取
 .service('newsService', ['$http', '$q', function ($http, $q) {
-	//资讯页面的数据读取，newsID值由上层的controller传递而来
+  //表格标题数据
+  var tableTitle = [{"attachment":"方案介绍","investment":"投入资金","advantage":"方案优势","effect":"预期效果","benefit":"预期产生效益","range":"应用范围","difficulty":"实施难度程度","place":"适用场景"}]
+  //资讯页面的数据读取，newsID值由上层的controller传递而来
 	var getNewsData = function (newsId) {
 		var newsData = []
 		//由url中的ID值来控制读取的数据是什么
@@ -45,7 +47,8 @@ angular.module('starter.services', [])
 	}
 	return {
 		getNewsData: getNewsData,
-		getProjectData: getProjectData
+		getProjectData: getProjectData,
+    tableTitle: tableTitle
 	}
 }])
 

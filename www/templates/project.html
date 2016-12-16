@@ -1,47 +1,50 @@
 <ion-view view-title="方案页" hide-tabs="true">
-  <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
-    <p id="project-table-show" class="{{ isTableShow === true ? 'open' : 'close' }}">{{tableShow}}</p>
-  </div>
   <ion-content class="project-content">
     <div class="project-head">
       <h2 class="project-head-title">{{projectData.title}}</h2>
-      <p class="project-head-copyfrom">{{projectData.copyfrom}}</p>
       <div class="project-head-list">
         <p>{{projectData.inputtime}}</p>
+        <p>{{projectData.copyfrom}}</p>
         <p>阅读：{{projectData.clicks}}</p>
       </div>
     </div>
     <div class="project-table">
       <div id="project-table" class="{{ projectTable === true ? 'open' : 'close' }}">
         <ul>
-          <li class="project-table-subname"><p>方案简介</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.attachment)">{{projectData.attachment}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.attachment}}</p></li>
+          <li class="project-table-content" ng-click="showTable(tableTitle.attachment,projectData.attachment)">{{projectData.attachment}}</li>
         </ul>
         <ul>
-          <li class="project-table-subname"><p>投入资金</p></li>
-          <li class="project-table-subcontent">{{projectData.investment}}</li>
-          <li class="project-table-name"><p>预期产生效益</p></li>
-          <li class="project-table-subcontent">{{projectData.benefit}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.investment}}</p></li>
+          <li class="project-table-subcontent" ng-click="showTable(tableTitle.investment,projectData.investment)">{{projectData.investment}}</li>
+          <li class="project-table-name"><p>{{tableTitle.benefit}}</p></li>
+          <li class="project-table-subcontent" ng-click="showTable(tableTitle.benefit,projectData.benefit)">{{projectData.benefit}}</li>
         </ul>
         <ul>
-          <li class="project-table-subname"><p>方案优势</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.advantage)">{{projectData.advantage}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.advantage}}</p></li>
+          <li class="project-table-content" ng-click="showTable(tableTitle.advantage,projectData.advantage)">{{projectData.advantage}}</li>
         </ul>
         
         <ul>
-          <li class="project-table-subname"><p>预期效果</p></li>
-          <li class="project-table-content" ng-click="showTable(projectData.effect)">{{projectData.effect}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.effect}}</p></li>
+          <li class="project-table-content" ng-click="showTable(tableTitle.effect,projectData.effect)">{{projectData.effect}}</li>
         </ul>
         <ul>
-          <li class="project-table-subname"><p>应用范围</p></li>
-          <li class="project-table-subcontent" ng-click="showTable(projectData.range)">{{projectData.range}}</li>
-          <li class="project-table-name"><p>实施难易程度</p></li>
-          <li class="project-table-subcontent">{{projectData.difficulty}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.range}}</p></li>
+          <li class="project-table-subcontent" ng-click="showTable(tableTitle.range,projectData.range)">{{projectData.range}}</li>
+          <li class="project-table-name"><p>{{tableTitle.difficulty}}</p></li>
+          <li class="project-table-subcontent" ng-click="showTable(tableTitle.difficulty,projectData.difficulty)">{{projectData.difficulty}}</li>
         </ul>
         <ul>
-          <li class="project-table-subname"><p>适用场景</p></li>
-          <li class="project-table-content">{{projectData.place}}</li>
+          <li class="project-table-subname"><p>{{tableTitle.place}}</p></li>
+          <li class="project-table-content" ng-click="showTable(tableTitle.place,projectData.place)">{{projectData.place}}</li>
         </ul>
+        <div class="project-table-show" ng-if=(isShow) ng-click="hideTable()">
+          <div id="project-table-show" class="{{ isTableShow === true ? 'open' : 'close' }}">
+            <h3>{{titleShow}}：</h3>
+            <p>{{tableShow}}</p>
+          </div>
+        </div>
       </div>
       <div class="change-button" ng-click="toBeLong()">
         <p class="change-button-decoration-left"></p>

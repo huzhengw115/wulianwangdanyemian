@@ -2,9 +2,9 @@
   <ion-content class="news-content">
   	<div class="news-head">
   		<h2 class="news-head-title">{{newsData.title}}</h2>
-      <p class="news-head-copyfrom">{{newsData.copyfrom}}</p>
   		<div class="news-head-list">
-  			<p>{{newsData.inputtime}}</p>
+        <p>{{newsData.inputtime}}</p>
+        <p>{{newsData.copyfrom}}</p>
   			<p>阅读：{{newsData.clicks}}</p>
   		</div>
       <img src="{{data.path}}" ng-repeat="data in newsData.thumb" class="news-head-pic" ng-if="isPicShow">
