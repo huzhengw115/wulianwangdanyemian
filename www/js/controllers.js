@@ -53,6 +53,8 @@ angular.module('starter.controllers', [])
       console.log('$scope.projectData:',$scope.projectData)
       //图片插件
       swipeService.photoswipe()
+      //分享
+      //WeixinShare.wxShare($scope.newsData.title, $scope.picture, '#/tab/special/' + newsId, 'desc')
     })
     .finally(function () {
       //关闭加载动画
@@ -106,6 +108,8 @@ angular.module('starter.controllers', [])
     newsService.getNewsData(specialId).then(function (newsData) {
       $scope.specialData = newsData
       console.log('$scope.specialData:',$scope.specialData)
+      //分享
+      //WeixinShare.wxShare($scope.newsData.title, $scope.picture, '#/tab/special/' + newsId, 'desc')
     })
     .finally(function () {
       //关闭加载动画

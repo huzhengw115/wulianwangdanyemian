@@ -1,10 +1,13 @@
+
+
 .project-content {
 	background-color: #eee;
+	top: 44px;
 }
 
 .project-head {
 	background-color: #fff;
-	padding: 15px 15px 0px 15px;
+	padding: 5px 15px 0px 15px;
 }
 
 .project-head-title {
