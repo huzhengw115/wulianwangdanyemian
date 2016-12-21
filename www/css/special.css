@@ -1,4 +1,20 @@
+.titleLogo {
+	height: 44px;
+	border-bottom: 3px #eee solid;
+}
 
+.titleLogo img {
+	padding: 8px 0 0 8px;
+	width: 44px;
+}
+
+.titleLogo p {
+	position: absolute;
+	top: 10px;
+	left: 45px;
+	font-size: 24px;
+	margin-left: 10px;
+}
 
 .special-content {
 	background-color: #eee;

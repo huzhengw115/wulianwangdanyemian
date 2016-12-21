@@ -13,7 +13,7 @@
   	<main class="news-page" ng-bind-html="newsData.content"></main>
   	<div class="news-bottom">
       <div class="news-tag">
-        <p>{{newsData.tagsname}}</p>
+        <p ng-repeat="data in tags">{{data.name}}</p>
       </div>
   		<p class="news-author">编辑：{{newsData.author}}</p>
   	</div>

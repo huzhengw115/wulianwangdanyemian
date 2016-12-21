@@ -13,6 +13,7 @@ angular.module('starter.controllers', [])
     //从service中调用数据方法
     newsService.getNewsData(newsId).then(function (newsData) {
       $scope.newsData = newsData
+      $scope.tags = newsData.tags
       console.log('$scope.newsData:', $scope.newsData)
       //图片的插件
       swipeService.photoswipe()
@@ -49,6 +50,7 @@ angular.module('starter.controllers', [])
     //调用获取数据的方法
     newsService.getProjectData(projectId).then(function (projectData) {
       $scope.projectData = projectData
+      $scope.tags = projectData.tags
       console.log('$scope.projectData.tags:',$scope.projectData.tags)
       console.log('$scope.projectData:',$scope.projectData)
       //图片插件
@@ -119,11 +121,4 @@ angular.module('starter.controllers', [])
 
   getSpecialData()
 
-}])
-
-.controller('FooterCtrl', ['$scope', function ($scope) {
-  $scope.footerCLass = 'footerExplain'
-  $scope.selectCLass = function () {
-    $scope.footerCLass= 'footerExplainDisplay'
-  }
 }])
